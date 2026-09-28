@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int stepen(int n) {
+	if (n & (n-1) == 0) {
+		return 1;
+	}
+        else {
+        	return 0;
+        }
+}
+
+int main() {
+	int n;
+	int i;
+	printf("Введи число: ");
+	scanf("%d", &n);
+	if (n < 1) {
+                printf("Не натуральное\n");
+        }
+	else {
+		if (n == 1 || stepen(n) == 1) {
+			printf("Степень\n");
+		}
+		else {
+			printf("Не степень\n");
+		}
+	}
+}
+
