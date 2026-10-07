@@ -1,23 +1,30 @@
 #include <stdio.h>
 
-int main() {
-	int a;
-	int n;
-	scanf("%d", &a);
-	for (int i; i < sizeof(a)-1; i++) {
-		if (a >> i == 1) {
-			a += 1;
+int chered(int a) {
+	int k = 0;
+	for (int i=0; i < 32; i++) {
+		if (a & 1 == 1) {
+			k++;
 		}
 		else {
-			a -= 1;
+			k--;
 		}
+		if (k < -1) {
+			return 0;
+			break;
+		}
+		a = a >> 1;
 	}
 
-if (n == 0) {
-	printf("Чередуется\n");
-}
-else {
-	printf("Не чередуется\n");
+	if (k == 0) {
+		return 1;
+	}
 }
 
+int main() {
+	int a;
+	scanf("%d", &a);
+	printf("%d\n", chered(a));
+
+	
 }
