@@ -7,7 +7,7 @@ int stepen(int n) {
 			k++;
 		}
 		n = n >> 1;
-	}	
+	}	 
 	if (k==1) {
 		return 1;
 	}
