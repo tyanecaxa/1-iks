@@ -111,7 +111,7 @@
 #                 k = 0
 #                 for i in message:
 #                     if not(i.isdigit()):
-#                         print('Есть буквы')
+#                         print('Есть что-то помимо цифр')
 #                         break
 #                     else:
 #                         k += 1
@@ -122,7 +122,7 @@
 #                 k = 0
 #                 for i in message:
 #                     if not(i.isalpha()):
-#                         print('Есть цифры')
+#                         print('Есть что-то помимо букв')
 #                         break
 #                     else:
 #                         k += 1
@@ -170,99 +170,85 @@
 
 
 # 7
-# email = input('Email: ')
-# passw = input('Пароль: ')
-# print()
-# k = 0
-# n = 0
+email = input('Email: ')
+passw = input('Пароль: ')
 
-# e = ['Email: ',email,' -> ']
-# p = ['Пароль: ',passw,' -> ']
+#Проверка email-a
+k = 0
+print('\nEmail:',email,end=' -> ')
+if email.count('@') == 1:
+    s = email[email.index('@'):]
+    k += 1
+    if '.' in s:
+        k += 1
+    else:
+        print('x нет . после @')
 
-# if email.count('@') == 1:
-#     s = email[email.index('@'):]
-#     k += 1
-# else:
-#     e.append('x нет "@"')
+    if email[0] != '@':
+        k += 1
+    else:
+        print('x не должен начинаться с @')
 
-# if '.' in s:
-#     k += 1
-# else:
-#     e.append('x нет . после @')
+    if email[-1] != '@':
+        k += 1
+    else:
+        print('x не должен заканчиваться на @')
 
-# if email[0] != '@':
-#     k += 1
-# else:
-#     e.append('x не должен начинаться с @')
+    if email[0] != '.':
+        k += 1
+    else:
+        print('x не должен начинаться с .')
 
-# if email[-1] != '@':
-#     k += 1
-# else:
-#     e.append('x не должен заканчиваться на @')
+    if email[-1] != '.':
+        k += 1
+    else:
+        print('x не должен заканчиваться на .')
 
-# if email[0] != '.':
-#     k += 1
-# else:
-#     e.append('x не должен начинаться с .')
+    if 5 < len(email):
+        k += 1
+    else:
+        print('x слишком короткий')
 
-# if email[-1] != '.':
-#     k += 1
-# else:
-#     e.append('x не должен заканчиваться на .')
+    if 30 > len(email):
+        k += 1
+    else:
+        print('x слишком длинный')
+else:
+    print('x нет "@"')
+if k == 8:
+    print('OK')
 
-# if 5 < len(email):
-#     k += 1
-# else:
-#     e.append('x слишком короткий')
+# Проверка пароля
+n = 0
+print('Пароль:',passw,end=' -> ')
+if len(passw) > 7:
+    n += 1
+else:
+    print('x слишком короткий')
 
-# if 30 > len(email):
-#     k += 1
-# else:
-#     e.append('x слишком длинный')
+if any(i.isdigit() for i in passw):
+    n += 1
+else:
+    print('x нет цифры')
 
-# if k == 8:
-#     e.append('OK')
+if any(i.isupper() for i in passw):
+    n += 1
+else:
+    print('x нет заглавной буквы')
 
-# if e[3] == 'OK':
-#     print(''.join(e))
-# else:
-#     print(''.join(e[:3]))
-#     for i in e[3:]:
-#         print(' '+i)
+if any(i.islower() for i in passw):
+    n += 1
+else:
+    print('x нет строчной буквы')
 
-# if len(passw) > 7:
-#     n += 1
-# else:
-#     p.append('x слишком короткий')
+sp = passw.count('!')+passw.count('@')+passw.count('#')+passw.count('$')+passw.count('%')+passw.count('^')+passw.count('&')+passw.count('*')
+if sp > 0:
+    n += 1
+else:
+    print('x нет спецсимвола')
 
-# if any (i.isdigit() for i in passw):
-#     n += 1
-# else:
-#     p.append('x нет цифры')
-
-# if any(i.isupper() for i in passw):
-#     n += 1
-# else:
-#     p.append('x нет заглавной буквы')
-
-# if any(i.islower() for i in passw):
-#     n += 1
-# else:
-#     p.append('x нет строчной буквы')
-
-# sp = passw.count('!')+passw.count('@')+passw.count('#')+passw.count('$')+passw.count('%')+passw.count('^')+passw.count('&')+passw.count('*')
-# if sp > 0:
-#     n += 1
-# else:
-#     p.append('x нет спецсимвола')
-
-# if n == 5:
-#     print(''.join(p))
-# else:
-#     print(''.join(p[:3]))
-#     for i in p[3:]:
-#         print(i)
-
+if n == 5:
+    print('OK')
 
 # 8
 # l1 = input().lower()
@@ -296,9 +282,20 @@
 # else:
 #     shiphr = shiphr[:-1]
 #     ish = [i for i in shiphr if shiphr.index(i)%2==0]
-#     print(ish)
 #     ish.extend([i for i in shiphr[::-1] if shiphr.index(i)%2!=0])
-#     print(ish)
 # print(''.join(ish))
     
-# доделать: 7,10
+# 10
+# camelCase = input('camelCase: ')
+# words = []
+# st = 0
+# end = 0
+# for i in camelCase:
+#     if i.isupper():
+#         words.extend([camelCase[st:end], '_'])
+#         st = end
+#     end += 1
+# words.append(camelCase[st:end])
+
+# snake_case = ''.join(words).lower()
+# print(snake_case)
