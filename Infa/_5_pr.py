@@ -170,85 +170,85 @@
 
 
 # 7
-email = input('Email: ')
-passw = input('Пароль: ')
+# email = input('Email: ')
+# passw = input('Пароль: ')
 
-#Проверка email-a
-k = 0
-print('\nEmail:',email,end=' -> ')
-if email.count('@') == 1:
-    s = email[email.index('@'):]
-    k += 1
-    if '.' in s:
-        k += 1
-    else:
-        print('x нет . после @')
+# # Проверка email-a
+# k = 0
+# print('\nEmail:',email,end=' -> ')
+# if email.count('@') == 1:
+#     s = email[email.index('@'):]
+#     k += 1
+#     if '.' in s:
+#         k += 1
+#     else:
+#         print('x нет . после @')
 
-    if email[0] != '@':
-        k += 1
-    else:
-        print('x не должен начинаться с @')
+#     if email[0] != '@':
+#         k += 1
+#     else:
+#         print('x не должен начинаться с @')
 
-    if email[-1] != '@':
-        k += 1
-    else:
-        print('x не должен заканчиваться на @')
+#     if email[-1] != '@':
+#         k += 1
+#     else:
+#         print('x не должен заканчиваться на @')
 
-    if email[0] != '.':
-        k += 1
-    else:
-        print('x не должен начинаться с .')
+#     if email[0] != '.':
+#         k += 1
+#     else:
+#         print('x не должен начинаться с .')
 
-    if email[-1] != '.':
-        k += 1
-    else:
-        print('x не должен заканчиваться на .')
+#     if email[-1] != '.':
+#         k += 1
+#     else:
+#         print('x не должен заканчиваться на .')
 
-    if 5 < len(email):
-        k += 1
-    else:
-        print('x слишком короткий')
+#     if 5 < len(email):
+#         k += 1
+#     else:
+#         print('x слишком короткий')
 
-    if 30 > len(email):
-        k += 1
-    else:
-        print('x слишком длинный')
-else:
-    print('x нет "@"')
-if k == 8:
-    print('OK')
+#     if 30 > len(email):
+#         k += 1
+#     else:
+#         print('x слишком длинный')
+# else:
+#     print('x нет "@"')
+# if k == 8:
+#     print('OK')
 
-# Проверка пароля
-n = 0
-print('Пароль:',passw,end=' -> ')
-if len(passw) > 7:
-    n += 1
-else:
-    print('x слишком короткий')
+# # Проверка пароля
+# n = 0
+# print('Пароль:',passw,end=' -> ')
+# if len(passw) > 7:
+#     n += 1
+# else:
+#     print('x слишком короткий')
 
-if any(i.isdigit() for i in passw):
-    n += 1
-else:
-    print('x нет цифры')
+# if any(i.isdigit() for i in passw):
+#     n += 1
+# else:
+#     print('x нет цифры')
 
-if any(i.isupper() for i in passw):
-    n += 1
-else:
-    print('x нет заглавной буквы')
+# if any(i.isupper() for i in passw):
+#     n += 1
+# else:
+#     print('x нет заглавной буквы')
 
-if any(i.islower() for i in passw):
-    n += 1
-else:
-    print('x нет строчной буквы')
+# if any(i.islower() for i in passw):
+#     n += 1
+# else:
+#     print('x нет строчной буквы')
 
-sp = passw.count('!')+passw.count('@')+passw.count('#')+passw.count('$')+passw.count('%')+passw.count('^')+passw.count('&')+passw.count('*')
-if sp > 0:
-    n += 1
-else:
-    print('x нет спецсимвола')
+# sp = passw.count('!')+passw.count('@')+passw.count('#')+passw.count('$')+passw.count('%')+passw.count('^')+passw.count('&')+passw.count('*')
+# if sp > 0:
+#     n += 1
+# else:
+#     print('x нет спецсимвола')
 
-if n == 5:
-    print('OK')
+# if n == 5:
+#     print('OK')
 
 # 8
 # l1 = input().lower()
