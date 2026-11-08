@@ -61,7 +61,6 @@
 # 6F 
 # n = input()
 # n = [int(i) for i in n]
-# print(n)
 # s = n[-1]
 # for i in range(0, len(n)-1):
 #     s1 = n[i]
@@ -70,7 +69,6 @@
 #         if s1 > 9:
 #             s1 -= 9
 #     s += s1
-#     print(s, s1)
 
 # if s % 10 == 0:
 #     print('Корректный номер')
