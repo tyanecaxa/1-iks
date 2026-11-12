@@ -136,15 +136,16 @@
 #     print(mtx[i])
 
 # 10
-def tokenize(s):
-    l = []
-    r = '   \n.,;:!?()[]{}"«»…—–'
-    j = 0
-    for i in range(len(s)-1):
-        if s[i] in r and ' ' == s[i+1]:
-            l.append(s[j:i])
-            j = i
-    return l
+# def tokenize(s):
+#     l = []
+#     r = '   \n.,;:!?()[]{}"«»…—–'
+#     j = 0
+#     for i in range(len(s)-1):
+#         if s[i] in r and ' ' == s[i+1]:
+#             l.append(s[j:i])
+#             j = i
+#     return l
 
-s = input()
-print(tokenize(s))
+# s = input()
+# print(tokenize(s))
+

@@ -6,12 +6,12 @@
 //Разделение слов
 int split(char text[], char words[][w]) {
     int count = 0;
-    char *word = strtok(text, " "); //разделение слов
+    char *word = strtok(text, " "); //разделение строки на слова
 
-    while (word != NULL && count < w) {
+    while (word != NULL && count < w) { //пока слова не закончатся
         strcpy(words[count], word); //копирование в массив
-        count++;
-        word = strtok(NULL, " ");
+        count++; // +1 слово
+        word = strtok(NULL, " "); //переход к след слову
     }
 
     return count; //кол-во слов
@@ -26,10 +26,10 @@ int compare(char a[], char b[]) {
 void swap(char a[], char b[]) {
 
     char temp[w];
-
-    strcpy(temp, a);
-    strcpy(a, b);
-    strcpy(b, temp);
+    // a = 'слово', b = 'word'
+    strcpy(temp, a); // temp = 'слово' 
+    strcpy(a, b); // a = 'word'
+    strcpy(b, temp); // b = 'слово'
 }
 
 //Обмен слов по алфавиту
