@@ -58,7 +58,7 @@ void printWords(char words[][w], int count) {
 }
 
 int main() {
-    char text[] = "orange apple banana kiwi";
+    char text[] = "qwerty orange apple banana kiwi asdfgg";
     char words[w][w];
 
     int count = split(text, words);
