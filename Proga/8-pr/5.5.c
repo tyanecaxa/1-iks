@@ -8,7 +8,9 @@
 void move_sand(int **field, int N, int M) {
 
     for (int i = N - 2; i >= 0; i--) {
-        for (int j = 0; j < M; j++) {
+        int lf = rand() % 2;
+        for (int st = 0; st < M; st++) {
+            int j = lf ? st : (M - 1 - st);
 
             if (field[i][j] == 1) {
 
@@ -17,62 +19,23 @@ void move_sand(int **field, int N, int M) {
                     field[i + 1][j] = 1;
                     field[i][j] = 0;
                 }
-                if (field[i + 1][j] == 3) { //вода
+                else if (field[i + 1][j] == 3) { //вода
                     field[i + 1][j] = 1;
                     field[i][j] = 3;
                 }
 
                 else {
-                    int direction = rand() % 2;
-                    // Сначала проверяем левую диагональ
-                    if (direction == 0) {
-                        //воздух
-                        if (j > 0 && field[i + 1][j - 1] == 0) {
-                            field[i + 1][j - 1] = 1;
-                            field[i][j] = 0;
-                        }
+                    int direction = (rand() % 2) ? -1 : 1;
+                    int f = j + direction;
+                    int sc = j - direction;
 
-                        else if (j < M - 1 && field[i + 1][j + 1] == 0) {
-                            field[i + 1][j + 1] = 1;
-                            field[i][j] = 0;
-                        }
-
-                        //вода
-                        if (j > 0 && field[i + 1][j - 1] == 3) {
-                            field[i + 1][j - 1] = 1;
-                            field[i][j] = 3;
-                        }
-
-                        else if (j < M - 1 && field[i + 1][j + 1] == 3) {
-                            field[i + 1][j + 1] = 1;
-                            field[i][j] = 3;
-                        }
+                    if (f >= 0 && f < M && (field[i+1][f] == 0 || field[i+1][f] == 3)) {
+                        field[i][j] = field[i+1][f];
+                        field[i+1][f] = 1;
                     }
-
-                    // Сначала проверяем правую диагональ
-                    else {
-
-                        //воздух
-                        if (j < M - 1 && field[i + 1][j + 1] == 0) {
-                            field[i + 1][j + 1] = 1;
-                            field[i][j] = 0;
-                        }
-
-                        else if (j > 0 && field[i + 1][j - 1] == 0) {
-                            field[i + 1][j - 1] = 1;
-                            field[i][j] = 0;
-                        }
-
-                        //вода
-                        if (j < M - 1 && field[i + 1][j + 1] == 3) {
-                            field[i + 1][j + 1] = 1;
-                            field[i][j] = 3;
-                        }
-
-                        else if (j > 0 && field[i + 1][j - 1] == 3) {
-                            field[i + 1][j - 1] = 1;
-                            field[i][j] = 3;
-                        }
+                    else if (sc >= 0 && sc < M && (field[i+1][sc] == 0 || field[i+1][sc] == 3)){
+                        field[i][j] = field[i+1][sc];
+                        field[i+1][sc] = 1;
                     }
                 }
             }
@@ -199,7 +162,7 @@ int main(int argc, char *argv[]) {
 
     clock_t start = clock();
     // Симуляция
-    for (int frame = 0; frame < 50; frame++) {
+    for (int frame = 0; frame < 20; frame++) {
 
         // Появление нового песка/воды сверху
         for (int j = 0; j < M; j++) {

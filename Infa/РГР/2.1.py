@@ -19,11 +19,9 @@ with open('movies.txt', 'r', encoding='utf-8') as f: #открытие файл�
             mn = j[1]
         
     print("Количество строк:", len(st))
-    for i in l:
-        print(i, end=' ')
-    print('/n', end='')
+    print(' '.join(l))
     for i in range(5):
-        
-        print(st[i])
-    print(mn)
-    print(mx)
+        t = [str(j) for j in st[i]]
+        print(' '.join(t))
+    print('Минимальный год:', mn)
+    print("Максимальный год:", mx)
