@@ -1,7 +1,7 @@
 # Лабораторная работа №9
 ## Работа с Git
 
-## На 3
+### На 3
 1\. Статус
 ![](img/image.png)
 
@@ -41,7 +41,7 @@
 17\. Пуш на удаленный репо
 ![](img/image-16.png)
 
-## Ветки.
+### Ветки.
 1-3. Создаю новую ветку mybranch. Список веток. Переключение на новую ветку
 ![](img/image-17.png)
 
@@ -86,7 +86,7 @@
 17\. В GitHub теперь 2 ветки
 ![](img/image-28.png)
 
-## На 4
+### На 4
 1-2. 
 ![](img/image-29.png)
 
@@ -133,7 +133,7 @@
 ![](img/image-43.png)
 ![](img/image-44.png)
 
-## Ветки и ff-merge
+### Ветки и ff-merge
 1\. Создание файла `greeting.txt`, добавление в облако и коммит с сообщением `Add greeting.txt`
 ![](img/image-45.png)
 
@@ -159,7 +159,7 @@
 15-17. Удаление ветки `feature/uppercase`, мерж `mybranch` и `main`
 ![](img/image-52.png)
 
-## На 5
+### На 5
 1-3. Создаём ветку `branch1`, заполняем файл `file.txt`, делаем коммит
 ![](img/image-53.png)
 
@@ -177,7 +177,7 @@
 ![](img/image-57.png)
 ![](img/image-58.png)
 
-## Merge conflicts
+### Merge conflicts
 1-2. Создадим файл `mergesort.py` с содержимым файла `base.py`, проиндексируем и сделаем коммит
 ![](img/image-59.png)
 
