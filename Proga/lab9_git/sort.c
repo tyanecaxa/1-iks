@@ -14,3 +14,9 @@ void selection_sort(int size, int arr[size]) {
     }
 }
 //
+int main() {
+    int a[] = {1, 6, 5};
+    int n = sizeof(a) / sizeof(a[0]);
+    selection_sort(n, a);
+    return 0;
+}
