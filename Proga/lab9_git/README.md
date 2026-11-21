@@ -158,3 +158,21 @@
 
 15-17. Удаление ветки `feature/uppercase`, мерж `mybranch` и `main`
 ![](img/image-52.png)
+
+## На 5
+1-3. Создаём ветку `branch1`, заполняем файл `file.txt`, делаем коммит
+![](img/image-53.png)
+
+4-6. Переключаемся на главную ветку, создаём и заполняем `file.txt`, делаем коммит и смотрим дерево
+![](img/image-54.png)
+
+7-8. Мерж `branch1` с `main`
+![](img/image-55.png)
+
+9/. Смотрим содержимое файла
+![](img/image-56.png)
+Нажимаем `Accept Both Changes`, чтобы сохранились обе строки
+
+10-11. 
+![](img/image-57.png)
+![](img/image-58.png)
