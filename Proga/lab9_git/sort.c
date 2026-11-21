@@ -11,3 +11,4 @@ void selection_sort(int size, int arr[size]) {
         arr[min_index] = tmp;
     }
 }
+//
