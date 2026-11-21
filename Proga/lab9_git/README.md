@@ -3,88 +3,158 @@
 
 ## На 3
 1. Статус
-![](image.png)
+![](img/image.png)
 
 2. История последних коммитов
-![](image-1.png)
+![](img/image-1.png)
 
 3. 4. Создание файла sort.c. Статус
-![](image-2.png)
-![](image-3.png)
+![](img/image-2.png)
+![](img/image-3.png)
 
 5. 6. Добавление файла в stage. Статус
-![](image-4.png) 
-![](image-5.png)
+![](img/image-4.png) 
+![](img/image-5.png)
 
 7. 8. Коммит файла в репозиторий. Статус
-![](image-6.png) 
-![](image-7.png)
+![](img/image-6.png) 
+![](img/image-7.png)
 
 9. 10. Статус после изменения файла
-![](image-8.png)
+![](img/image-8.png)
 
 11. 12. Добавление изменения файла. Статус
-![](image-9.png)
-![](image-10.png)
+![](img/image-9.png)
+![](img/image-10.png)
 
 13. 14. Изменяю файл еще раз. Коммит файла.
-![](image-11.png)
+![](img/image-11.png)
 
 15. Статус. История коммитов.
-![](image-12.png)
-![](image-13.png)
+![](img/image-12.png)
+![](img/image-13.png)
 
 16. Добавление и коммит изменений 
-![](image-14.png)
-![](image-15.png)
+![](img/image-14.png)
+![](img/image-15.png)
 
 17. Пуш на удаленный репо
-![](image-16.png)
+![](img/image-16.png)
 
 ## Ветки.
 1. 2. 3. Создаю новую ветку mybranch. Список веток. Переключение на новую ветку
-![](image-17.png)
+![](img/image-17.png)
 
 4. Как изменяется `git status` после изменения ветки?
 Изменяется только первая строка. 
 `"On branch <name>"`
 
 5. Точно на ветке mybranch
-![](image-18.png)
+![](img/image-18.png)
 
 6. 7. Создаю файл file1.txt с текстом "Любовь". Добавляю и делаю коммит.
-![](image-19.png)
+![](img/image-19.png)
 
 8. Коммит указывает на новую ветку
-![](image-20.png)
+![](img/image-20.png)
 
 9. Обратно в ветку main
-![](image-21.png)
+![](img/image-21.png)
 
 10. При вводе `git log --online --graph` что изменилось?
-![](image-22.png)
+![](img/image-22.png)
 Теперь не показывается последний сделанный коммит
 
 11. Создание файла file2.txt. Коммит
-![](image-23.png)
+![](img/image-23.png)
 
 12. Посмотреть разветвление коммитов
-![](image-24.png)
+![](img/image-24.png)
 
 13. Переключаемся обратно к ветке mybranch
-![](image-25.png)
+![](img/image-25.png)
 
 14. Файл file2.txt пропал?
 Да, так как данная ветка уже не знает об этом изменении.
 
 15. Разница между ветками mybranch и main
-![](image-26.png)
+![](img/image-26.png)
 
 16. Добавляем текущий файл со скриншотами и делаем коммит, пушим ветку mybranch. 
-![](image-27.png)
+![](img/image-27.png)
 
 17. В GitHub теперь 2 ветки
-![](image-28.png)
+![](img/image-28.png)
 
 ## На 4
-1. 
+1-2. 
+![](img/image-29.png)
+
+3.
+![](img/image-30.png)
+
+4. При запуске `git diff --staged` - пусто
+![](img/image-31.png)
+
+5. 6-7. Добавляем `sort.c`, смотрим `git diff` и снова смотрим `git diff --staged`
+![](img/image-32.png)
+![](img/image-33.png)
+// Не пустой, тк в основной ветке есть скриншоты
+![](img/image-34.png)
+
+8-10. Удаляем значение '2' из массива в `sort.c`. Значения в `git diff` и `git diff --staged`
+![](img/image-35.png)
+![](img/image-36.png)
+
+11. У файла `sort.c` на текущий момент 3 состояния:
+- Коммит;
+- В области stage;
+- Изменённый в директории.
+
+12. `git status`
+![](img/image-37.png)
+
+13-14. Запускаем отмену индексации и смотрим статус
+![](img/image-38.png)
+
+15. Добавляем изменения и делаем коммит
+![](img/image-39.png)
+
+16. Журнал
+![](img/image-40.png)
+
+17-18. Содержимое `sort.c`
+![](img/image-41.png)
+
+19. Статус
+![](img/image-42.png)
+
+20-23. `git restore sort.c` -> содержимое `sort.c` -> `git status`
+![](img/image-43.png)
+![](img/image-44.png)
+
+## Ветки и ff-merge
+1. Создание файла `greeting.txt`, добавление в облако и коммит с сообщением `Add greeting.txt`
+![](img/image-45.png)
+
+2. Добавление в файл `Hello`, добавление в облако и коммит с сообщением `Add content to greeting.txt`
+![](img/image-46.png)
+
+3-5. Создание новой ветки `feature/uppercase`
+![](img/image-47.png)
+
+6-8. 
+![](img/image-48.png)
+
+9. 
+![](img/image-49.png)
+
+10-12. Переключаемся на основную ветку и смотрим содержимое `greeting.txt`
+![](img/image-50.png)
+В ветке `feature/uppercase` - `HELLO`
+
+13-14. Объединение веток и просмотр файла
+![](img/image-51.png)
+
+15-17. Удаление ветки `feature/uppercase`, мерж `mybranch` и `main`
+![](img/image-52.png)
