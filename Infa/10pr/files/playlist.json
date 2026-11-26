@@ -29,7 +29,8 @@
         "Kendrick Lamar - Song 2",
         "Imagine Dragons - Song 99",
         "Kendrick Lamar - Song 43",
-        "Imagine Dragons - Song 23"
+        "Imagine Dragons - Song 23",
+        "Maikle - kyu"
     ],
     "Поп": [
         "Michael Jackson - Song 54",
@@ -253,7 +254,8 @@
         "Linkin Park - Song 37",
         "Beyonce - Song 74",
         "Eminem - Song 52",
-        "Metallica - Song 91"
+        "Metallica - Song 91",
+        "Frank Lyu - Song for you"
     ],
     "Хип-хоп": [
         "Queen - Song 54",
@@ -318,5 +320,8 @@
         "Metallica - Song 7",
         "Kendrick Lamar - Song 68",
         "Kendrick Lamar - Song 49"
+    ],
+    "Прочие": [
+        "Unknown - song 0"
     ]
 }
